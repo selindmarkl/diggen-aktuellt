@@ -1,0 +1,46 @@
+            {% include "top.html" %}
+
+            <div id="content" class="box">
+
+                <div class="bWrapper">
+                    <img class="contextImage" src="/ads/{{ ad.key }}/image?size=medium"/>
+                    <div class="infoBox">
+                        <h2>{{ ad.title }}</h2>
+                        <p id="blurb">{{ ad.blurb }}</p>
+                        <dl>
+                            <dt>Telefon</dt>
+                            <dd>{{ ad.phone }}</dd>
+                            <dt>E-post</dt>
+                            <dd>{{ ad.email }}</dd>
+                            <dt>Pris</dt>
+                            <dd>{{ ad.price2 }} kr</dd>
+                        </dl>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <h2>Denna annons är synlig på:</h2>
+                <ul id="billboards">
+                    {% for billboard in billboards %}
+                    <li class="sWrapper">
+                        <a class="contextImage" href="/billboards/{{ billboard.key }}"><img src="/billboards/{{ billboard.key }}/image?size=small"/></a>
+                        <div class="infoBox">
+                            <a href="/billboards/{{ billboard.key }}"><h2>{{ billboard.title }}</h2></a>
+                            <dl>
+                                <dt>Telefon</dt>
+                                <dd>{{ billboard.phone }}</dd>
+                                <dt>Email</dt>
+                                <dd>{{ billboard.email }}</dd>
+                            </dl>
+                            <div class="footer">
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+        {% include "ga.html" %}
+    </body>
+</html>

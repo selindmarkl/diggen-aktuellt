@@ -1,0 +1,11 @@
+            {% include "top.html" %}
+            <div id="content" class="box">
+                <h2>Tack! Nu är din annons upplagd.</h2>
+                <p>Använd följande länk för att i framtiden redigera annonsen eller markera den som såld:</p>
+                <a class="importantMessage" href="{{ secret_link }}">{{ secret_link }}</a>
+                <p class="warning">Notera: länken är hemlig och bör ej delges någon annan!</p>
+            </div>
+        </div>
+        {% include "ga.html" %}
+    </body>
+</html>

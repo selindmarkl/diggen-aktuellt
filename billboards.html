@@ -1,0 +1,33 @@
+            {% include "top.html" %}
+
+            <div id="content" class="box">
+                <p>
+                    <a class="button" href="/add-billboard">Lägg till annonstavla</a>
+                    <div class="clear"></div>
+                </p>
+                <ul id="billboards">
+                    {% for billboard in billboards %}
+                    <li class="sWrapper">
+                        <a class="contextImage" href="/billboards/{{ billboard.key }}"><img src="/billboards/{{ billboard.key }}/image?size=small"/></a>
+                        <div class="infoBox">
+                            <a href="/billboards/{{ billboard.key }}"><h2>{{ billboard.title }}</h2></a>
+                            <dl>
+                                <dt>Telefon</dt>
+                                <dd>{{ billboard.phone }}</dd>
+                                <dt>Email</dt>
+                                <dd>{{ billboard.email }}</dd>
+                            </dl>
+                            <div class="footer">
+                                <a href="/billboards/{{ billboard.key }}">{{ billboard.ads|length }} annonser</a>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div class="clear"></div>
+            </div>
+
+        </div>
+        {% include "ga.html" %}
+    </body>
+</html>

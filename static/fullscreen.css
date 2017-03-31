@@ -1,0 +1,195 @@
+/* RESET
+ ****************************************************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+p {
+    margin-bottom: 8px;
+}
+ul li {
+    list-style-type: none;
+}
+body {
+    font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+    font-size: 13px;
+    background-color: #fff;
+    color: #333;
+}
+a,
+a:visited,
+a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+/* BASE
+ ****************************************************************************/
+
+.bulletedList li {
+    list-style-type: disc;
+    margin-left: 8px;
+}
+
+.horizontalList li {
+    list-style-type: none;
+    display: inline;
+}
+.glue {
+    display: none;
+}
+.clear {
+    clear: both;
+}
+.clickable {
+    cursor: pointer;
+}
+dt {
+    margin-top: 8px;
+    font-weight: bold;
+}
+a img {
+    border: none;
+}
+fieldset {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+legend {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+label {
+    display: block;
+}
+.button {
+    float: left;
+    border: 1px solid #808080;
+    cursor: pointer;
+    background-image: -moz-linear-gradient(top, white, #ccc);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#ccc));
+    background-size: 100% 100%;
+    padding: 5px;
+    margin: 5px 0;
+    color: black;
+    text-shadow: white 0px 0px 3px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+h2 {
+    margin: 16px 0;
+}
+h1 {
+    background: black;
+    color: white;
+}
+h1 a,
+h1 a:visited {
+    color: white;
+}
+
+.shadow {
+    -moz-box-shadow: #333 0px 10px 50px 0px;
+    -webkit-box-shadow: #333 0px 10px 50px 0px;
+    box-shadow: #333 0px 10px 50px 0px;
+}
+
+/* FULLSCREEN */
+
+#wrapper {
+    background: #b5af83;
+    width: 1920px;
+    height: 1080px;
+    padding: 0;
+    margin: 0;
+}
+
+#ads {
+    float: left;
+    width: 1450px;
+    height: 1080px;
+}
+
+#sponsors {
+    float: left;
+    width: 450px;
+    height: 1080px;
+}
+#sponsors li {
+    margin-top: 20px;
+    height: 156px;
+    background: white;
+}
+#sponsors img {
+    width: 100%;
+}
+
+.fsad h2 {
+    font-size: 16px;
+    margin: 0;
+}
+.fsad {
+    float: left;
+    position: relative;
+    width: 200px;
+    height: 490px;
+    overflow: hidden;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    background: #ffffff;
+}
+.fsad.sold {
+    opacity: 0.6;
+}
+.fsad.sold .qr {
+    display: none;
+}
+.fsad.sold .price {
+    background: red;
+    color: white;
+}
+.fsad .contextImage {
+    position: relative;
+    display: block;
+    width: 204px;
+    height: 204px;
+}
+.fsad .contextImage img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.fsad .footer {
+    display: block;
+    position: absolute;
+    bottom: 5;
+}
+.fsad .qr {
+    position: relative;
+    left: -6px; /* don't know how to get rid of white space from google charts */
+}
+.infoBox {
+    margin-top: 8px;
+    height: 200px;
+    overflow: hidden;
+}
+.blurb {
+    margin: 8px 0;
+}
+.fsad dt {
+    display: none;
+}
+.fsad .price {
+    color: red;
+    font-weight: bold;
+    background: yellow;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 16px;
+    -moz-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+}

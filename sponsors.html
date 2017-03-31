@@ -1,0 +1,26 @@
+            {% include "top.html" %}
+
+            <div id="content" class="box">
+                <p>
+                    <a class="button" href="/add-sponsor">Lägg till sponsor</a>
+                    <div class="clear"></div>
+                </p>
+                <ul id="sponsors">
+                    {% for sponsor in sponsors %}
+                    <li class="sWrapper">
+                        <a class="contextImage" href="/sponsors/{{ sponsor.key }}"><img src="/sponsors/{{ sponsor.key }}/image" width="200"/></a>
+                        <div class="infoBox">
+                            <a href="/sponsors/{{ sponsor.key }}"><h2>{{ sponsor.title }}</h2></a>
+                            <dl>
+                            </dl>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div class="clear"></div>
+            </div>
+
+        </div>
+        {% include "ga.html" %}
+    </body>
+</html>

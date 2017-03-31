@@ -1,0 +1,50 @@
+            {% include "top.html" %}
+            <div id="content" class="box">
+                <form action="/ads/{{ ad.key }}/admin" enctype="multipart/form-data" method="post">
+                    <fieldset>
+                        <legend>Redigera annons</legend>
+                        <p>
+                            <label for="ip">IP</label>
+                            <input type="text" disabled="disabled" name="title" value="{{ ad.ip }}"/>
+                        </p>
+                        <p>
+                            <label for="password">Password</label>
+                            <input type="text" disabled="disabled" name="password" value="{{ ad.password }}"/>
+                        </p>
+                        <p>
+                            <label for="title">Titel</label>
+                            <input type="text" name="title" value="{{ ad.title }}"/>
+                        </p>
+                        <p>
+                            <label for="blurb">Text</label>
+                            <textarea rows="15" cols="40" name="blurb">{{ ad.blurb }}</textarea>
+                        </p>
+                        <p>
+                            <label for="phone">Telefon</label>
+                            <input type="text" name="phone" value="{{ ad.phone }}"/>
+                        </p>
+                        <p>
+                            <label for="email">Email</label>
+                            <input type="text" name="email" value="{{ ad.email }}"/>
+                        </p>
+                        <p>
+                            <label for="price">Pris</label>
+                            <input type="text" name="price" value="{{ ad.price2 }}"/>
+                        </p>
+                        <p>
+                            <label for="sold">Såld</label>
+                            {% if ad.sold %}
+                            <input type="checkbox" name="sold" value="{{ ad.sold }}" checked="checked"/>
+                            {% else %}
+                            <input type="checkbox" name="sold" value="{{ ad.sold }}"/>
+                            {% endif %}
+                        </p>
+                        <input type="submit" value="Spara"/>
+                        <button class="delete">Ta bort</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        {% include "ga.html" %}
+    </body>
+</html>

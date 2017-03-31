@@ -1,0 +1,29 @@
+            {% include "top.html" %}
+            <div id="content" class="box">
+                <form action="/add-billboard" enctype="multipart/form-data" method="post">
+                    <fieldset>
+                        <legend>Lägg till annonstavla</legend>
+                        <p>
+                            <label for="title">Titel</label>
+                            <input type="text" name="title"/>
+                        </p>
+                        <p>
+                            <label for="phone">Telefon</label>
+                            <input type="text" name="phone"/>
+                        </p>
+                        <p>
+                            <label for="email">Email</label>
+                            <input type="text" name="email"/>
+                        </p>
+                        <p>
+                            <label for="image">Bild</label>
+                            <input type="file" name="image"/>
+                        </p>
+                        <input type="submit" value="Lägg till"/>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        {% include "ga.html" %}
+    </body>
+</html>

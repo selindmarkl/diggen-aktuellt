@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Diggen aktuellt STENKROSSEN</title>
+        <link href="/static/fullscreen.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body id="billboard_fullscreen_view">
+        <div id="wrapper">
+            {% if ads %}
+            <ul id="ads">
+                {% for ad in ads %}
+                {% if ad.sold %}
+                <li class="fsad shadow sold">
+                {% else %}
+                <li class="fsad shadow">
+                {% endif %}
+                    <span class="contextImage">
+                        <img src="/ads/{{ ad.key }}/image?size=small"/>
+                        {% if ad.sold %}
+                        <span class="price">SÅLD!</span>
+                        {% else %}
+                        <span class="price">{{ ad.price2 }} kr</span>
+                        {% endif %}
+                    </span>
+                    <div class="infoBox">
+                        <h2>{{ ad.title }}</h2>
+                        <dl class="contact">
+                            <dt>Telefon</dt>
+                            <dd>{{ ad.phone }}</dd>
+                            <dt>Email</dt>
+                            <dd>{{ ad.email }}</dd>
+                        </dl>
+                        {% if ad.blurb %}
+                        <p class="blurb">{{ ad.blurb }}</p>
+                        {% endif %}
+                        <div class="footer">
+                            <img class="qr" src="http://chart.apis.google.com/chart?chs=80x80&cht=qr&chld=|0&chl=http://diggen-aktuellt.appspot.com/ads/{{ ad.key }}" width="80" height="80" alt="" />
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            <ul id="sponsors">
+                {% for sponsor in sponsors %}
+                <li class="shadow"><img src="/sponsors/{{ sponsor.key }}/image"/></li>
+                {% endfor %}
+                
+                {% for dummy in dummies %}
+                <li class="shadow"></li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>Inga annonser tillagda för {{ context.title }}</p>
+            {% endif %}
+        </div>
+        {% include "ga.html" %}
+    </body>
+</html>

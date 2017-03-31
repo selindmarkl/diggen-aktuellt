@@ -1,0 +1,54 @@
+            {% include "top.html" %}
+
+            <div id="content" class="box">
+
+                <p>
+                    <a class="button" href="?fullscreen">Fullskärm</a>
+                    <div class="clear"></div>
+                </p>
+
+                <div class="bWrapper">
+                    <img class="contextImage" src="/billboards/{{ context.key }}/image?size=medium"/>
+                    <div class="infoBox">
+                        <h2>{{ context.title }}</h2>
+                        <dl>
+                            <dt>Telefon</dt>
+                            <dd>{{ context.phone }}</dd>
+                            <dt>Email</dt>
+                            <dd>{{ context.email }}</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="clear"></div>
+
+                <h2>Annonser:</h2>
+                {% if ads %}
+                <ul id="ads">
+                    {% for ad in ads %}
+                    <li class="sWrapper">
+                        <a class="contextImage" href="/ads/{{ ad.key }}"><img src="/ads/{{ ad.key }}/image?size=small"/></a>
+                        <div class="infoBox">
+                            <a href="/ads/{{ ad.key }}"><h2>{{ ad.title }}</h2></a>
+                            <dl>
+                                <dt>Telefon</dt>
+                                <dd>{{ ad.phone }}</dd>
+                                <dt>Email</dt>
+                                <dd>{{ ad.email }}</dd>
+                                <dt>Pris</dt>
+                                <dd>{{ ad.price2 }} kr</dd>
+                            </dl>
+                            <div class="footer">
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>Inga annonser tillagda för {{ context.title }}</p>
+                {% endif %}
+                <div class="clear"></div>
+            </div>
+        </div>
+        {% include "ga.html" %}
+    </body>
+</html>

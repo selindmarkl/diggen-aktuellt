@@ -1,0 +1,84 @@
+            {% include "top.html" %}
+            <div id="content" class="box">
+                <form action="/add" enctype="multipart/form-data" method="post">
+                    <fieldset>
+                        <legend>1. Lägg in en annons</legend>
+                        <div id="col1">
+                            <p>
+                                <label for="title">Rubrik</label>
+                                <input type="text" name="title"/>
+                            </p>
+                            <p>
+                                <label for="blurb">Text (ej nödvändig)</label>
+                                <textarea rows="15" cols="40" name="blurb"></textarea>
+                            </p>
+                            <p>
+                                <label for="phone">Telefon</label>
+                                <input type="text" name="phone"/>
+                            </p>
+                            <p>
+                                <label for="email">E-post</label>
+                                <input type="text" name="email"/>
+                            </p>
+                            <p>
+                                <label for="price">Pris (kr)</label>
+                                <input type="text" name="price"/>
+                            </p>
+                            <p>
+                                <label for="image">Bild</label>
+                                <input type="file" name="image"/>
+                            </p>
+                        </div>
+                        <div id="col2">
+                            <div id="preview" class="fsad shadow">
+                                <span class="contextImage">
+                                    <img height="200" src="/static/preview.png"/>
+                                    <span class="price">0 kr</span>
+                                </span>
+                                <div class="infoBox">
+                                    <h2></h2>
+                                    <dl class="contact">
+                                        <dt>Telefon</dt>
+                                        <dd class="phone"></dd>
+                                        <dt>Email</dt>
+                                        <dd class="email"></dd>
+                                    </dl>
+                                    <p class="blurb"></p>
+                                    <div class="footer">
+                                        <img class="qr" src="http://chart.apis.google.com/chart?chs=80x80&cht=qr&chld=|0&chl=http://diggen-annons.appspot.com/add" width="80" height="80" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>2. Välj var annonsen ska synas</legend>
+                        
+                        <div class="multiSelectWidget">
+                            <input type="hidden" id="selected_billboards" name="selected_billboards" value=""/>
+                            <table id="billboards">
+                                <tbody>
+                                    {% for billboard in billboards %}
+                                    <tr>
+                                        <td><input type="checkbox" name="{{ billboard.key }}"/></td>
+                                        <td><img src="/billboards/{{ billboard.key }}/image?size=small" width="30" height="30"/></td>
+                                        <td>{{ billboard.title }}</td>
+                                        <td>29 kr</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <p id="price">0 kr</p>
+                        <p>Under testperioden är annonsering gratis!</p>
+                        <ul id="errors" class="bulletedList"></ul>
+                        <input id="submit" type="submit" disabled="disabled" value="Publicera"/>
+                    </fieldset>
+                    <div class="clear"></div>
+                </form>
+            </div>
+        </div>
+        {% include "ga.html" %}
+    </body>
+</html>

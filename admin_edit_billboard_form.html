@@ -1,0 +1,44 @@
+            {% include "top.html" %}
+            <div id="content" class="box">
+                <form action="/billboards/{{ context.key }}/admin" enctype="multipart/form-data" method="post">
+                    <fieldset>
+                        <legend>Redigera annonstavla</legend>
+                        <p>
+                            <label for="title">Titel</label>
+                            <input type="text" name="title" value="{{ context.title }}"/>
+                        </p>
+                        <p>
+                            <label for="phone">Telefon</label>
+                            <input type="text" name="phone" value="{{ context.phone }}"/>
+                        </p>
+                        <p>
+                            <label for="email">Email</label>
+                            <input type="text" name="email" value="{{ context.email }}"/>
+                        </p>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Sponsorer</legend>
+                        
+                        <div class="multiSelectWidget">
+                            <input type="hidden" id="selected_sponsors" name="selected_sponsors" value="{{ selected_sponsors }}"/>
+                            <table id="sponsors">
+                                <tbody>
+                                    {% for sponsor in sponsors %}
+                                    <tr>
+                                        <td><input type="checkbox" name="{{ sponsor.key }}"/></td>
+                                        <td><img src="/sponsors/{{ sponsor.key }}/image" width="30" height="30"/></td>
+                                        <td>{{ sponsor.title }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                    </fieldset>
+                    <input type="submit" value="Spara"/>
+                </form>
+            </div>
+        </div>
+        {% include "ga.html" %}
+    </body>
+</html>

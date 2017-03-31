@@ -1,0 +1,21 @@
+            {% include "top.html" %}
+            <div id="content" class="box">
+                <form action="/add-sponsor" enctype="multipart/form-data" method="post">
+                    <fieldset>
+                        <legend>Lägg till sponsor</legend>
+                        <p>
+                            <label for="title">Titel</label>
+                            <input type="text" name="title"/>
+                        </p>
+                        <p>
+                            <label for="image">Bild (450x156)</label>
+                            <input type="file" name="image"/>
+                        </p>
+                        <input type="submit" value="Lägg till"/>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        {% include "ga.html" %}
+    </body>
+</html>
